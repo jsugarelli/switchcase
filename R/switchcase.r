@@ -145,6 +145,8 @@ switchCase <- function(expr, ..., break.case = TRUE) {
   f <- function(lst) { return(is.null(lst[[1]])) }
 
   expr <- eval(expr, envir = parent.frame())
+  if(class(expr)=="character") expr <- paste0("\"", expr, "\"", sep="")
+
   i <- 1
   exit <- FALSE
   while(i <= length(args) & !exit) {

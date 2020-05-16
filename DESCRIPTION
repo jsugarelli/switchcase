@@ -1,7 +1,7 @@
 Package: switchcase
 Type: Package
 Title: A Simple and Flexible Switch-Case Construct for the 'R' Language
-Version: 0.1.0
+Version: 0.1.1
 Authors@R: person("Joachim", "Zuckarelli", role = c("aut", "cre"), email = "joachim@zuckarelli.de", comment = c(ORCID = "0000-0002-9280-3016"))
 Maintainer: Joachim Zuckarelli <joachim@zuckarelli.de>
 Description: Provides a switch-case construct for 'R', as it is known from other programming languages. It allows to test multiple, similar conditions in an efficient, easy-to-read manner, so nested if-else constructs can be avoided. The switch-case construct is designed as an 'R' function that allows to return values depending on which condition is met and lets the programmer flexibly decide whether or not to leave the switch-case construct after a case block has been executed.
