@@ -2,6 +2,12 @@ The switchcase package
 ================
 Joachim Zuckarelli
 
+**New: switchcase tutorial on YouTube**
+
+To learn more about the `switchcase` package and how it relates to R’s
+buit-in primitive function `switch()` please watch the new `switchcase`
+tutorial on [YouTube](https://youtu.be/3ybF8u_PE7w).
+
 # Introduction
 
 In contrast to many other programming languages, R has no real native
