@@ -144,27 +144,27 @@ switchCase <- function(expr, ..., break.case = TRUE) {
   cond.true <- FALSE
   f <- function(lst) { return(is.null(lst[[1]])) }
 
-  expr <- eval(expr, envir = parent.frame())
-  if(class(expr)=="character") expr <- paste0("\"", expr, "\"", sep="")
+  expr_val <- eval(expr, envir = parent.frame())
 
   i <- 1
   exit <- FALSE
   while(i <= length(args) & !exit) {
     if(!is.null(args[[i]][[1]])) {
-      # cond <- stringr::str_replace_all(deparse(args[[i]][[1]]), "\\.\\.expr", as.character(expr))
-      cond <- gsub("\\.\\.expr", as.character(expr), deparse(args[[i]][[1]]))[1]
+      replace_val <- if (is.character(expr_val)) {
+        if (grepl('^".*"$', expr_val)) expr_val else paste0('"', expr_val, '"')
+      } else {
+        as.character(expr_val)
+      }
+      cond <- gsub("\\.\\.expr", replace_val, deparse(args[[i]][[1]]))[1]
       if(eval(parse(text = cond))) {
         if(!is.null(args[[i]][[2]])) {
-          if(!is.null(args[[i]][[2]])) eval(args[[i]][[2]], envir = parent.frame())
-          # return value if required
-          if(!is.null(args[[i]][[3]])) ret.value <- args[[i]][[3]]
-          # note that at least one condition has been met, so no default situation
-          cond.true <- TRUE
-          # break if required
-          if(ifnull(args[[i]][[4]]) | (break.case == TRUE & is.null(args[[i]][[4]]))) {
-            invisible(ret.value)
-            exit = TRUE
-          }
+          eval(args[[i]][[2]], envir = parent.frame())
+        }
+        if(!is.null(args[[i]][[3]])) ret.value <- args[[i]][[3]]
+        cond.true <- TRUE
+        if(ifnull(args[[i]][[4]]) | (break.case == TRUE & is.null(args[[i]][[4]]))) {
+          invisible(ret.value)
+          exit = TRUE
         }
       }
     }
@@ -176,7 +176,8 @@ switchCase <- function(expr, ..., break.case = TRUE) {
     defs <- unlist(lapply(args, f))
     if(sum(defs) > 0) {
       ind <- which(defs)[1]
-      eval(args[[ind]][[2]])
+      if(!is.null(args[[ind]][[2]])) eval(args[[ind]][[2]], envir = parent.frame())
+      if(!is.null(args[[ind]][[3]])) ret.value <- args[[ind]][[3]]
     }
   }
   invisible(ret.value)
@@ -184,7 +185,7 @@ switchCase <- function(expr, ..., break.case = TRUE) {
 
 
 
-#' @title Building alterantive 'case' branches for the switch-case construct
+#' @title Building alternative 'case' branches for the switch-case construct
 #'
 #' @description The \code{\link{alt}()} function is used to build alternative 'case'
 #'   branches for the switch-case construct. Each alternative branch consist of
