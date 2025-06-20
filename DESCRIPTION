@@ -10,4 +10,4 @@ BugReports: https://github.com/jsugarelli/switchcase/issues
 URL: https://github.com/jsugarelli/switchcase/, https://youtu.be/3ybF8u_PE7w
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.1.0
+RoxygenNote: 7.3.2

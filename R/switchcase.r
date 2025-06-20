@@ -15,15 +15,6 @@ NULL
 ..expr <- 0
 
 
-# helper function
-ifnull <- function(x) {
-  if(is.null(x)) {
-    return(FALSE)
-  }
-  else {
-    return(x == TRUE)
-  }
-}
 
 
 #' @title The switch-case construct
@@ -162,7 +153,7 @@ switchCase <- function(expr, ..., break.case = TRUE) {
         }
         if(!is.null(args[[i]][[3]])) ret.value <- args[[i]][[3]]
         cond.true <- TRUE
-        if(ifnull(args[[i]][[4]]) | (break.case == TRUE & is.null(args[[i]][[4]]))) {
+        if(isTRUE(args[[i]][[4]]) | (break.case == TRUE & is.null(args[[i]][[4]]))) {
           invisible(ret.value)
           exit = TRUE
         }
