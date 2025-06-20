@@ -2,7 +2,7 @@
 % Please edit documentation in R/switchcase.r
 \name{alt}
 \alias{alt}
-\title{Building alterantive 'case' branches for the switch-case construct}
+\title{Building alternative 'case' branches for the switch-case construct}
 \usage{
 alt(condition, code.if, return.val = NULL, break.case = TRUE)
 }
