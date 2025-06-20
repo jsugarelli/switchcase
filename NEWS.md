@@ -1,3 +1,10 @@
+# switchcase 0.1.2
+
+## Improvements
+
+* Better handling of string expressions inside `switchCase()`.
+* Default case can now return values correctly.
+
 # switchcase 0.1.1
 
 ## Bug fix
