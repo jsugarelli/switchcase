@@ -5,7 +5,7 @@ Joachim Zuckarelli
 **New: switchcase tutorial on YouTube**
 
 To learn more about the `switchcase` package and how it relates to R’s
-buit-in primitive function `switch()` please watch the new `switchcase`
+built-in primitive function `switch()` please watch the new `switchcase`
 tutorial on [YouTube](https://youtu.be/3ybF8u_PE7w).
 
 # Introduction
@@ -97,12 +97,12 @@ switchCase(
   alt(
     ..expr > 35 & ..expr <= 40,
     { cat("Your body mass index is ", ind, " which is severely obese.\n") },
-    "severly obese"
+    "severely obese"
   ),
   alt(
     ..expr > 40,
     { cat("Your body mass index is ", ind, " which is Very severely obese.\n") },
-    "very severly obese"
+    "very severely obese"
   )
  )
 }
@@ -169,4 +169,4 @@ variables of your script or function in which `switchCase()` is used.
 # Contact
 
 Follow me on Twitter (<https://twitter.com/jsugarelli>) to stay
-up-to-date on new developement around the `switchcase` package.
+up-to-date on new development around the `switchcase` package.
