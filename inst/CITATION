@@ -1,0 +1,12 @@
+citHeader("To cite the switchcase package in publications use:")
+
+bibentry(
+  "Manual",
+  title = "switchcase: A Simple and Flexible Switch-Case Construct for the 'R' Language",
+  author = person("Joachim", "Zuckarelli", role = c("aut", "cre"), email = "joachim@zuckarelli.de", comment = c(ORCID = "0000-0002-9280-3016")),
+  year = "2020",
+  note = "R package version 0.1.1",
+  url = "https://github.com/jsugarelli/switchcase"
+)
+
+citFooter("Please run citation(\"switchcase\") in R to obtain the recommended reference for this package.")

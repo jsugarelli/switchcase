@@ -110,6 +110,11 @@ The last and optional argument (break) of the `switchCase()` function (not used 
 
 All code in the alternative 'case' branches is evaluated in the environment from which `switchCase()` was called so it is easy to access variables of your script or function in which `switchCase()` is used.
 
+# Citing `switchcase`
+
+To cite this package in publications, run `citation("switchcase")` in R. This
+prints the reference information stored in the package's `inst/CITATION` file.
+
 
 # Contact
 Follow me on Twitter (https://twitter.com/jsugarelli) to stay up-to-date on new developement around the `switchcase` package.
