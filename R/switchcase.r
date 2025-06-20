@@ -75,13 +75,13 @@ ifnull <- function(x) {
 #'   statement is applicable can be modeled by setting the first element of an
 #'   alternative (which would normally contain the test condition) to
 #'   \code{NULL}. If multiple defaults are found, only the first one is
-#'   executed. Technical note: All code is executed in the enviroment from which
+#'   executed. Technical note: All code is executed in the environment from which
 #'   \code{switchCase()} is called so it is easy to access variables and
 #'   functions from there.
 #'
 #' @return The return value of the 'case' alternative that is executed last. If
 #'   there is no applicable alternative or no applicable alternative returns a
-#'   value then nothing is retuned.
+#'   value then nothing is returned.
 #'
 #' @family switchcase
 #' @export
@@ -126,12 +126,12 @@ ifnull <- function(x) {
 #'   alt(
 #'     ..expr > 35 & ..expr <= 40,
 #'     { cat("Your body mass index is ", ind, " which is severely obese.\n") },
-#'     "severly obese"
+#'     "severely obese"
 #'   ),
 #'   alt(
 #'     ..expr > 40,
 #'     { cat("Your body mass index is ", ind, " which is Very severely obese.\n") },
-#'     "very severly obese"
+#'     "very severely obese"
 #'   )
 #'  )
 #' }
@@ -192,7 +192,7 @@ switchCase <- function(expr, ..., break.case = TRUE) {
 #'   four elements: The test condition, the code that is executed if the
 #'   condition evaluates to \code{TRUE}, an optional return value which
 #'   \code{\link{switchCase}()} will return if the condition is met and after
-#'   the branch code has ben executed, and an optional logical value indicating
+#'   the branch code has been executed, and an optional logical value indicating
 #'   if the switch-case construct will be left after this branch has been
 #'   executed.
 #'

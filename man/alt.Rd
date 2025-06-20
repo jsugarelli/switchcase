@@ -35,7 +35,7 @@ The \code{\link{alt}()} function is used to build alternative 'case'
   four elements: The test condition, the code that is executed if the
   condition evaluates to \code{TRUE}, an optional return value which
   \code{\link{switchCase}()} will return if the condition is met and after
-  the branch code has ben executed, and an optional logical value indicating
+  the branch code has been executed, and an optional logical value indicating
   if the switch-case construct will be left after this branch has been
   executed.
 }

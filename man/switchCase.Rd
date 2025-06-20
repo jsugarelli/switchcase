@@ -38,7 +38,7 @@ via the \code{...} argument.}
 \value{
 The return value of the 'case' alternative that is executed last. If
   there is no applicable alternative or no applicable alternative returns a
-  value then nothing is retuned.
+  value then nothing is returned.
 }
 \description{
 \code{switchCase()} provides the functionality of a typical
@@ -63,7 +63,7 @@ The \code{expr} argument is the expression that is evaluated and
   statement is applicable can be modeled by setting the first element of an
   alternative (which would normally contain the test condition) to
   \code{NULL}. If multiple defaults are found, only the first one is
-  executed. Technical note: All code is executed in the enviroment from which
+  executed. Technical note: All code is executed in the environment from which
   \code{switchCase()} is called so it is easy to access variables and
   functions from there.
 }
@@ -107,12 +107,12 @@ switchCase(
   alt(
     ..expr > 35 & ..expr <= 40,
     { cat("Your body mass index is ", ind, " which is severely obese.\n") },
-    "severly obese"
+    "severely obese"
   ),
   alt(
     ..expr > 40,
     { cat("Your body mass index is ", ind, " which is Very severely obese.\n") },
-    "very severly obese"
+    "very severely obese"
   )
  )
 }
